@@ -2,6 +2,7 @@
 #define LINKED_HASH_MAP_LINKED_HASH_MAP_ENTRY_H
 
 struct Entry {
+    int hash;
     int key;
     int value;
 
