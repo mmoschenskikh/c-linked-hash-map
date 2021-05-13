@@ -12,6 +12,12 @@ bool removeEntry(struct LinkedHashMap *map, int key) {
                 map->table[index] = bucket->next;
             }
             prev->next = bucket->next;
+            if (map->head == map->tail) {
+                map->head = NULL;
+                map->tail = NULL;
+                free(bucket);
+                return true;
+            }
             if (bucket == map->head) {
                 bucket->after->before = NULL;
                 map->head = bucket->after;
