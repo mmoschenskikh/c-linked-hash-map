@@ -7,7 +7,7 @@
 
 int hash(int key);
 
-int indexFor(int hash, int buckets);
+int indexFor(struct LinkedHashMap *map, int hash);
 
 bool isEmpty(struct LinkedHashMap *map);
 

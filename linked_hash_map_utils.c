@@ -5,7 +5,8 @@ int hash(int key) {
     return key ^ (key >> 7) ^ (key >> 4);
 }
 
-int indexFor(int hash, int buckets) {
+int indexFor(struct LinkedHashMap *map, int hash) {
+    int buckets = sizeof(map->table) / sizeof(map->table[0]);
     return hash & (buckets - 1);
 }
 

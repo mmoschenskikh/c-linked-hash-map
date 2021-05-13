@@ -13,10 +13,9 @@ void put(struct LinkedHashMap *map, int key, int value) {
     elem->after = NULL;
     elem->next = NULL;
 
-    int buckets = sizeof(map->table) / sizeof(map->table[0]);
     int h = hash(key);
     elem->hash = h;
-    int index = indexFor(h, buckets);
+    int index = indexFor(map, h);
 
     struct Entry *bucket = map->table[index];
     if (bucket == NULL) {
