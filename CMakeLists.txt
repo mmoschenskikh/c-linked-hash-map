@@ -3,4 +3,4 @@ project(linked_hash_map C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(linked_hash_map main.c)
+add_executable(linked_hash_map main.c linked_hash_map_entry.h linked_hash_map_struct.h)
