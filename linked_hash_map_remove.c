@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "linked_hash_map_remove.h"
 
 bool removeEntry(struct LinkedHashMap *map, int key) {
