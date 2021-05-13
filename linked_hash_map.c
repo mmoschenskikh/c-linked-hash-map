@@ -18,6 +18,10 @@ struct LinkedHashMap *createHashMap() {
 
 void deleteMap(struct LinkedHashMap *map) {
     struct Entry *elem = map->head;
+    if (elem == NULL) {
+        free(map);
+        return;
+    }
     struct Entry *next = map->head->after;
     while (next != NULL) {
         free(elem);
