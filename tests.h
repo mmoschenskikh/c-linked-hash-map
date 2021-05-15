@@ -12,4 +12,4 @@ void testGet(struct LinkedHashMap *map);
 
 void testRemove(struct LinkedHashMap *map);
 
-#endif //LINKED_HASH_MAP_TESTS_H
+#endif

@@ -36,6 +36,9 @@ void testGet(struct LinkedHashMap *map) {
     printf("Requested key: %d; value for the key: %d\n", key, get(map, key)->value);
     key = 9;
     printf("Requested key: %d; value for the key: %d\n", key, get(map, key)->value);
+    key = 99;
+    struct Entry *pair = get(map, key);
+    printf("Requested key: %d; value for the key: %s\n", key, pair == NULL ? "NULL" : "");
 }
 
 void testRemove(struct LinkedHashMap *map) {
@@ -43,18 +46,23 @@ void testRemove(struct LinkedHashMap *map) {
     print(map);
 
     int key = 4;
-    printf("Removing entry with key %d:\n", key);
-    removeEntry(map, key);
+    char *result = removeEntry(map, key) ? "true" : "false";
+    printf("Removing entry with key %d: %s\n", key, result);
     print(map);
 
     key = 0;
-    printf("Removing entry with key %d:\n", key);
-    removeEntry(map, key);
+    result = removeEntry(map, key) ? "true" : "false";
+    printf("Removing entry with key %d: %s\n", key, result);
     print(map);
 
     key = 9;
-    printf("Removing entry with key %d:\n", key);
-    removeEntry(map, key);
+    result = removeEntry(map, key) ? "true" : "false";
+    printf("Removing entry with key %d: %s\n", key, result);
+    print(map);
+
+    key = 99;
+    result = removeEntry(map, key) ? "true" : "false";
+    printf("Removing entry with key %d: %s\n", key, result);
     print(map);
 
     printf("Removing all entries:\n");
