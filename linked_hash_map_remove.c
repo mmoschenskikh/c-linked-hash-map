@@ -34,6 +34,8 @@ bool removeEntry(struct LinkedHashMap *map, int key) {
         if (bucket->next != NULL) {
             prev = bucket;
             bucket = bucket->next;
+        } else {
+            break;
         }
     }
 
